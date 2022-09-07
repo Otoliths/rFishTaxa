@@ -37,6 +37,7 @@ db <- species_family()
 
 # Each matching row by family
 
+library(magrittr)
 r <- search_cas(query = c("Anguilla nebulosa", "Clupisoma sinense"),type = "species")
 r \%>\% dplyr::left_join(db[,1:4],by = "family")
 
