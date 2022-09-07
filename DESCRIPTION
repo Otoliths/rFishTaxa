@@ -1,6 +1,6 @@
 Package: rFishTaxa
 Type: Package
-Title: 'Eschmeyer's Catalog of Fishes' Toolkit
+Title: R Interface to 'Eschmeyer's Catalog of Fishes'
 Version: 0.1.0
 Date: 2022-09-08
 Authors@R: c(person(given = "Liuyong",     family = "Ding",   email = "ly_ding@126.com",              role = c("aut", "cre"), comment = c(ORCID="0000-0002-5490-182X")),
