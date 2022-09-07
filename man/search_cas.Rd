@@ -2,7 +2,7 @@
 % Please edit documentation in R/search_catalog.R
 \name{search_cas}
 \alias{search_cas}
-\title{Searching `Eschmeyer's Catalog of Fishes`}
+\title{Searching 'Eschmeyer\'s Catalog of Fishes'}
 \format{
 The following data frame of the fields to be returned are recognized:
 \itemize{
