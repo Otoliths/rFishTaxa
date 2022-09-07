@@ -3,7 +3,7 @@
 \name{rFishTaxa-package}
 \alias{rFishTaxa-package}
 \alias{rFishTaxa}
-\title{'Eschmeyer\'s Catalog of Fishes' Mining with R}
+\title{'Eschmeyer’s Catalog of Fishes' Mining with R}
 \description{
 `Eschmeyer's Catalog of Fishes` \url{https://www.calacademy.org/scientists/projects/catalog-of-fishes} is the authoritative reference for taxonomic fish names, featuring a searchable online database.
 This package helps users to obtain valid taxonomic fish information.
