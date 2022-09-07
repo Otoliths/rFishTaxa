@@ -24,7 +24,7 @@ species_family()
 Data frame.
 }
 \description{
-This function get Genera/Species of Fishes by Family/Subfamily in real time.
+This function get genera/species of fishes by family/subfamily in real time.
 }
 \details{
 See for website \url{https://researcharchive.calacademy.org/research/ichthyology/catalog/SpeciesByFamily.asp} details.
@@ -41,6 +41,9 @@ r <- search_cas(query = c("Anguilla nebulosa", "Clupisoma sinense"),type = "spec
 r \%>\% dplyr::left_join(db[,1:4],by = "family")
 
 }
+}
+\references{
+\url{https://github.com/curso-r/lives/blob/6e042cf5f0bae0d957ff487a39b6601ac6f514ea/drafts/20210915_webscraping_ichthyology.R}
 }
 \author{
 Liuyong Ding \email{ly_ding@126.com}
