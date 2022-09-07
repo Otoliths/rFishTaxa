@@ -6,12 +6,12 @@
 \format{
 The following data frame of the fields to be returned are recognized:
 \itemize{
-\item query : family, genus, and species Matched.
+\item query : family, genus, and species matched.
 \item species(genus)_author : species(genus) and author(s) returned.
 \item species(genus) : Species(genus) returned.
 \item author : Author(s) returned.
 \item family : Family(subfamily) of species.
-\item status : Current status including Validation, synonym, and Uncertainty.
+\item status : Current status including validation, synonym, and uncertainty.
 }
 }
 \usage{
