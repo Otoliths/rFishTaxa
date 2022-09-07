@@ -113,7 +113,7 @@ head(r3)
 ```{r }
 r4 <- search_cas(query = c("Anguilla nebulosa", "Clupisoma sinense"),type = "species")
 head(r4)
-r %>% dplyr::left_join(species_family()[,1:4],by = "family")
+r4 %>% dplyr::left_join(species_family()[,1:4],by = "family")
 ```
 ```
 # A tibble: 2 x 9
