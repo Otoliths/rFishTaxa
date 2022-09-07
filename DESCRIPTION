@@ -1,0 +1,34 @@
+Package: rFishTaxa
+Type: Package
+Title: `Eschmeyer's Catalog of Fishes` Toolkit
+Version: 0.1.0
+Date: 2022-09-08
+Authors@R: c(person(given = "Liuyong",     family = "Ding",   email = "ly_ding@126.com",              role = c("aut", "cre"), comment = c(ORCID="0000-0002-5490-182X")),
+             person(given = "Zhixin",      family = "Zhang",  email = "zhangzhixin1102@hotmail.com", role = "ctb")
+             )
+Maintainer: Liuyong Ding <ly_ding@126.com>
+Description: `Eschmeyer's Catalog of Fishes` <https://www.calacademy.org/scientists/projects/catalog-of-fishes> is the authoritative reference for taxonomic fish names, featuring a searchable online database. This package helps users to query valid taxonomic fish information for biodiversity estimates, conservation issues, etc.
+Depends: R (>= 4.0.0)
+Imports: 
+  httr,
+  tibble,
+  magrittr,
+  xml2,
+  dplyr,
+  stringr,
+  rvest,
+  janitor
+Suggests:
+    utils,
+    testthat,
+    rmarkdown,
+    knitr,
+    prettydoc,
+    devtools
+VignetteBuilder: knitr
+License: Artistic-2.0
+URL: https://otoliths.github.io/rFishTaxa/
+BugReports: https://github.com/Otoliths/rFishTaxa/issues
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
