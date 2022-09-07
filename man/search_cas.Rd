@@ -48,7 +48,7 @@ r4 <- search_cas(query = c("Hoplias malabaricus", "Brachyplatystoma filamentosum
 }
 }
 \references{
-Fricke, R., Eschmeyer, W. N. & R. van der Laan (eds) 2022. ESCHMEYER'S CATALOG OF FISHES: GENERA, SPECIES, REFERENCES.. Electronic version accessed dd mmm 2022. \url{http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp}
+Fricke, R., Eschmeyer, W. N. & R. van der Laan (eds) 2022. ESCHMEYER'S CATALOG OF FISHES: GENERA, SPECIES, REFERENCES. Electronic version accessed dd mmm 2022. \url{http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp}
 }
 \author{
 Liuyong Ding \email{ly_ding@126.com}
