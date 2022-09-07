@@ -1,5 +1,5 @@
 #' @title Searching Eschmeyer's Catalog of Fishes
-#' @description This function get fields for fetching valid species information from the 'Eschmeyer's Catalog of Fishes'.
+#' @description This function get fields for fetching valid species information from the Eschmeyer's Catalog of Fishes.
 #' @rdname search_cas
 #' @name search_cas
 #' @param query \code{string} One and more queries, support family, genus, and species.
