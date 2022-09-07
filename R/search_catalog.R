@@ -6,12 +6,12 @@
 #' @param type \code{string} There is one required parameter, type = c("genus_family","species_family","species_genus","species").For example, `genus_family` for genera in a family,`species_family` for species in a family, `species_genus` for species in a genus, and `species` for species related to a species.
 #' @format The following data frame of the fields to be returned are recognized:
 #' \itemize{
-#' \item query : family, genus, and species Matched.
+#' \item query : family, genus, and species matched.
 #' \item species(genus)_author : species(genus) and author(s) returned.
 #' \item species(genus) : Species(genus) returned.
 #' \item author : Author(s) returned.
 #' \item family : Family(subfamily) of species.
-#' \item status : Current status including Validation, synonym, and Uncertainty.
+#' \item status : Current status including validation, synonym, and uncertainty.
 #' }
 #' @return Data frame.
 #' @author Liuyong Ding \email{ly_ding@126.com}
