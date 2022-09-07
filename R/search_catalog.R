@@ -1,4 +1,4 @@
-#' @title Searching 'Eschmeyer's Catalog of Fishes'
+#' @title Searching Eschmeyer's Catalog of Fishes
 #' @description This function get fields for fetching valid species information from the 'Eschmeyer's Catalog of Fishes'.
 #' @rdname search_cas
 #' @name search_cas
