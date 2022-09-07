@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[`Eschmeyer's Catalog of Fishes`](https://www.calacademy.org/scientists/projects/catalog-of-fishes) is the authoritative reference for taxonomic fish names, featuring a searchable on-line database. This **rFishTaxa** package helps users to obtain valid taxonomic fish information for biodiversity estimates, conservation issues, etc.
+[`Eschmeyer's Catalog of Fishes`](https://www.calacademy.org/scientists/projects/catalog-of-fishes) is the authoritative reference for taxonomic fish names, featuring a searchable online database. This **rFishTaxa** package helps users to obtain valid taxonomic fish information for biodiversity estimates, conservation issues, etc.
 
 
 ## :arrow_double_down: Installation
