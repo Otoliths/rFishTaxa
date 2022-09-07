@@ -1,5 +1,5 @@
 #' @title Obtaining Species of Fishes by Family/Subfamily periodically
-#' @description This function get Genera/Species of Fishes by Family/Subfamily in real time.
+#' @description This function get genera/species of fishes by family/subfamily in real time.
 #' @rdname species_family
 #' @name species_family
 #' @format The following data frame of the fields to be returned are recognized:
@@ -27,6 +27,7 @@
 #' @importFrom janitor clean_names
 #' @importFrom dplyr filter
 #' @details See for website \url{https://researcharchive.calacademy.org/research/ichthyology/catalog/SpeciesByFamily.asp} details.
+#' @references \url{https://github.com/curso-r/lives/blob/6e042cf5f0bae0d957ff487a39b6601ac6f514ea/drafts/20210915_webscraping_ichthyology.R}
 #' @examples
 #' \dontrun{
 #' # Genera/Species of Fishes by Family/Subfamily through 2022:
