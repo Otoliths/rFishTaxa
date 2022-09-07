@@ -2,7 +2,7 @@
 % Please edit documentation in R/search_catalog.R
 \name{search_cas}
 \alias{search_cas}
-\title{Searching 'Eschmeyer’s Catalog of Fishes'}
+\title{Searching Eschmeyer's Catalog of Fishes}
 \format{
 The following data frame of the fields to be returned are recognized:
 \itemize{
@@ -18,9 +18,9 @@ The following data frame of the fields to be returned are recognized:
 search_cas(query, type)
 }
 \arguments{
-\item{query}{*string* One and more queries, support family, genus, and species.}
+\item{query}{\code{string} One and more queries, support family, genus, and species.}
 
-\item{type}{*string* There is one required parameter, type = c("genus_family","species_family","species_genus","species").For example, `genus_family` for genera in a family,`species_family` for species in a family, `species_genus` for species in a genus, and `species` for species related to a species.}
+\item{type}{\code{string} There is one required parameter, type = c("genus_family","species_family","species_genus","species").For example, `genus_family` for genera in a family,`species_family` for species in a family, `species_genus` for species in a genus, and `species` for species related to a species.}
 }
 \value{
 Data frame.
