@@ -2,7 +2,7 @@
 % Please edit documentation in R/species_family.R
 \name{species_family}
 \alias{species_family}
-\title{Obtaining Species of Fishes by Family/Subfamily periodically}
+\title{Obtaining species of fishes by family/subfamily periodically}
 \format{
 The following data frame of the fields to be returned are recognized:
 \itemize{
