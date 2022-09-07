@@ -37,7 +37,7 @@ species_family()
 ****************************************
 Eschmeyer's Catalog of Fishes online database show that the number of available names for use at the species level as of 8 August 2022 is 61,376, the number of valid genera is 5,229, and the number of valid species is 36,292, of which 18,372 are found in freshwater.
 ****************************************
-# A tibble: 1,037 x 10
+# A tibble: 1,036 x 10
    class order family subfamily available_genera valid_genera genera_last_ten~ available_speci~ valid_species species_last_te~
    <chr> <chr> <chr>  <chr>                <int>        <int>            <int>            <int>         <int>            <int>
  1 Myxi~ Myxi~ Myxini Myxini                  NA           NA               NA               NA            NA               NA
@@ -50,7 +50,7 @@ Eschmeyer's Catalog of Fishes online database show that the number of available 
  8 Petr~ Petr~ Petro~ Petromyz~               NA           NA               NA               NA            NA               NA
  9 Petr~ Petr~ Petro~ Petromyz~               19            8                0              102            43                4
 10 Geot~ Geot~ Geotr~ Geotriid~                9            1                0               14             2                0
-# ... with 1,027 more rows
+# ... with 1,026 more rows
 ```
 
 ##### Searching for genera in a family:
