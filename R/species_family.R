@@ -25,6 +25,7 @@
 #' @importFrom tibble as_tibble
 #' @importFrom utils browseURL
 #' @importFrom janitor clean_names
+#' @importFrom dplyr filter
 #' @details See for website \url{https://researcharchive.calacademy.org/research/ichthyology/catalog/SpeciesByFamily.asp} details.
 #' @examples
 #' \dontrun{
@@ -56,7 +57,8 @@ species_family <- function(){
       xml2::read_html() %>%
       xml2::xml_find_first("//*[@style='width:700px; border-collapse:collapse']") %>%
       rvest::html_table() %>%
-      janitor::clean_names()
+      janitor::clean_names() %>%
+      dplyr::filter(class != "Totals")
     return(tibble::as_tibble(result))
   }else{
     cat("Error request - the parameter query is not valid")
