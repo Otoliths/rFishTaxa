@@ -28,4 +28,8 @@ r4 <- search_cas(query = c("Anguilla nebulosa", "Clupisoma sinense"),type = "spe
 
 head(r4)
 
+# Each matching row by family
+library(magrittr)
+r4 %>% dplyr::left_join(species_family()[,1:4],by = "family")
+
 

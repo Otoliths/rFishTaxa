@@ -77,12 +77,16 @@ r4 <- search_cas(query = c("Anguilla nebulosa", "Clupisoma sinense"),type = "spe
 
 head(r4)
 
+# Each matching row by family
+library(magrittr)
+r4 %>% dplyr::left_join(species_family()[,1:4],by = "family")
+
 ```
 
 
 ## Contribution
 
-Latin-Chinese Dictionary of Fishes Names Introduction In the last 20-30 years, significant progress has been made in the work of fish. However the contents of a few published Latin-Chinese dictionaries of world's fish names are still incomplete and cannot satisfy the increasing demand by the Chinese language people for the purpose's such as research, teaching, conservation, fisheries, or aquatic trade use. Thus, we attempt to collect all currently valid fish species in the world from the literatures and give each genus and species a unique Chinese name. We hope that this dictionary can be used as the basis for the standardization of Chinese fish names for Chinese people in different regions such as China, Taiwan, and Hong Kong.
+Latin-Chinese Dictionary of Fishes Names Introduction In the last 20-30 years, significant progress has been made in the work of fish. However the contents of a few published Latin-Chinese dictionaries of world's fish names are still incomplete and cannot satisfy the increasing demand by the Chinese language people for the purpose's such as research, teaching, conservation, fisheries, or aquatic trade use. 
 
 Future versions try to add [`Lantin-Chinese Dictionary of Fish Names by Classification System`](http://www.taiwan-fisheries.com.tw/news-preface-2e.htm) to this package.
 

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Liuyong Ding Institute of International Rivers and Eco-security, Yunnan University" />
 
-<meta name="date" content="2022-09-07" />
+<meta name="date" content="2022-09-08" />
 
 <title>rFishTaxa: Eschmeyer&#39;s Catalog of Fishes Mining with R</title>
 
@@ -132,7 +132,7 @@ a.sourceLine {
 <h1 class="title toc-ignore project-name">rFishTaxa: <code>Eschmeyer&#39;s Catalog of Fishes</code> Mining with R</h1>
 <h4 class="author project-author">Liuyong Ding<br />
 Institute of International Rivers and Eco-security, Yunnan University</h4>
-<h4 class="date project-date">2022-09-07</h4>
+<h4 class="date project-date">2022-09-08</h4>
 </section>
 
 
@@ -162,84 +162,98 @@ Institute of International Rivers and Eco-security, Yunnan University</h4>
 <h5>Genera/Species of Fishes by Family/Subfamily through 2022:</h5>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">species_family</span>()</span></code></pre></div>
 <pre><code>## ****************************************
-## Eschmeyer&#39;s Catalog of Fishes online database show that the number of available names for use at the species level as of 8 August 2022 is 61,376, the number of valid genera is 5,229, and the number of valid species is 36,292, of which 18,372 are found in freshwater.
+## Eschmeyer&#39;s Catalog of Fishes online database show that the number of available names for use at the species level as of 7 September 2022 is 61,391, the number of valid genera is 5,229, and the number of valid species is 36,305, of which 18,380 are found in freshwater.
 ## ****************************************</code></pre>
-<pre><code>## # A tibble: 1,037 x 10
-##    class   order family subfamily available_genera valid_genera genera_last_ten~
-##    &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;int&gt;        &lt;int&gt;            &lt;int&gt;
-##  1 Myxini  Myxi~ Myxini Myxini                  NA           NA               NA
-##  2 Myxini~ Myxi~ Myxin~ Myxinifo~               NA           NA               NA
-##  3 Myxini~ Myxi~ Myxin~ Myxinidae               19            6                1
-##  4 Rubicu~ Rubi~ Rubic~ Rubicund~                1            1                1
-##  5 Eptatr~ Epta~ Eptat~ Eptatret~               10            1                0
-##  6 Myxini~ Myxi~ Myxin~ Myxininae                8            4                0
-##  7 Petrom~ Petr~ Petro~ Petromyz~               NA           NA               NA
-##  8 Petrom~ Petr~ Petro~ Petromyz~               NA           NA               NA
-##  9 Petrom~ Petr~ Petro~ Petromyz~               19            8                0
-## 10 Geotri~ Geot~ Geotr~ Geotriid~                9            1                0
-## # ... with 1,027 more rows, and 3 more variables: available_species &lt;int&gt;,
-## #   valid_species &lt;int&gt;, species_last_ten_years_2013_2022 &lt;int&gt;</code></pre>
+<pre><code>## # A tibble: 1,036 × 10
+##    class    order family subfa…¹ avail…² valid…³ gener…⁴ avail…⁵ valid…⁶ speci…⁷
+##    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;
+##  1 Myxini   Myxi… Myxini Myxini       NA      NA      NA      NA      NA      NA
+##  2 Myxinif… Myxi… Myxin… Myxini…      NA      NA      NA      NA      NA      NA
+##  3 Myxinid… Myxi… Myxin… Myxini…      19       6       1     104      88      13
+##  4 Rubicun… Rubi… Rubic… Rubicu…       1       1       1       4       4       0
+##  5 Eptatre… Epta… Eptat… Eptatr…      10       1       0      65      55      10
+##  6 Myxinin… Myxi… Myxin… Myxini…       8       4       0      35      29       3
+##  7 Petromy… Petr… Petro… Petrom…      NA      NA      NA      NA      NA      NA
+##  8 Petromy… Petr… Petro… Petrom…      NA      NA      NA      NA      NA      NA
+##  9 Petromy… Petr… Petro… Petrom…      19       8       0     102      43       4
+## 10 Geotrii… Geot… Geotr… Geotri…       9       1       0      14       2       0
+## # … with 1,026 more rows, and abbreviated variable names ¹​subfamily,
+## #   ²​available_genera, ³​valid_genera, ⁴​genera_last_ten_years_2013_2022,
+## #   ⁵​available_species, ⁶​valid_species, ⁷​species_last_ten_years_2013_2022
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="searching-for-genera-in-a-family" class="section level5">
 <h5>Searching for genera in a family:</h5>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fu">search_cas</span>(<span class="at">query =</span> <span class="fu">c</span>(<span class="st">&quot;cyprinidae&quot;</span>,<span class="st">&quot;balitoridae&quot;</span>),<span class="at">type =</span> <span class="st">&quot;genus_family&quot;</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r1)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 6
+<pre><code>## # A tibble: 6 × 6
 ##   query                    genus_author               genus author family status
 ##   &lt;chr&gt;                    &lt;chr&gt;                      &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; 
-## 1 asptosyax, B             Aaptosyax Rainboth 1991    Aapt~ Rainb~ Cypri~ Valid~
-## 2 yprininae, tribe         Labeo Cuvier 1816          Labeo Cuvie~ Cypri~ Synon~
-## 3 tautonymy, fifteen       Labeo Cuvier 1816          Labeo Cuvie~ Cypri~ Synon~
-## 4 ccrossocheilus, Kottelat Acrossocheilus Oshima 1919 Acro~ Oshim~ Cypri~ Valid~
-## 5 yprininae, tribe         Puntioplites Smith 1929    Punt~ Smith~ Cypri~ Synon~
-## 6 genneiogarra, Kottelat   Ageneiogarra Garman 1912   Agen~ Garma~ Cypri~ Valid~</code></pre>
+## 1 asptosyax, B             Aaptosyax Rainboth 1991    Aapt… Rainb… Cypri… Valid…
+## 2 yprininae, tribe         Labeo Cuvier 1816          Labeo Cuvie… Cypri… Synon…
+## 3 tautonymy, fifteen       Labeo Cuvier 1816          Labeo Cuvie… Cypri… Synon…
+## 4 ccrossocheilus, Kottelat Acrossocheilus Oshima 1919 Acro… Oshim… Cypri… Valid…
+## 5 yprininae, tribe         Puntioplites Smith 1929    Punt… Smith… Cypri… Synon…
+## 6 genneiogarra, Kottelat   Ageneiogarra Garman 1912   Agen… Garma… Cypri… Valid…</code></pre>
 </div>
 <div id="searching-for-species-in-a-family" class="section level5">
 <h5>Searching for species in a family:</h5>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">search_cas</span>(<span class="at">query =</span> <span class="st">&quot;balitoridae&quot;</span>,<span class="at">type =</span> <span class="st">&quot;species_family&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r2)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 6
+<pre><code>## # A tibble: 6 × 6
 ##   query                       species_author        species author family status
 ##   &lt;chr&gt;                       &lt;chr&gt;                 &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; 
-## 1 abbreviata, Homaloptera     Jinshaia abbreviata ~ Jinsha~ (Günt~ Balit~ Valid~
-## 2 acuticauda, Sinohomaloptera Hemimyzon yaotanensi~ Hemimy~ (Fang~ Balit~ Synon~
-## 3 amphisquamata, Homaloptera  Homalopterula amphis~ Homalo~ (Webe~ Balit~ Valid~
-## 4 anisura, Platycara          Balitora brucei Gray~ Balito~ Gray ~ Balit~ Synon~
-## 5 annamitica, Balitora        Balitora annamitica ~ Balito~ Kotte~ Balit~ Valid~
-## 6 annandalei, Bhavania        Bhavania annandalei ~ Bhavan~ Hora ~ Balit~ Valid~</code></pre>
+## 1 abbreviata, Homaloptera     Jinshaia abbreviata … Jinsha… (Günt… Balit… Valid…
+## 2 acuticauda, Sinohomaloptera Hemimyzon yaotanensi… Hemimy… (Fang… Balit… Synon…
+## 3 amphisquamata, Homaloptera  Homalopterula amphis… Homalo… (Webe… Balit… Valid…
+## 4 anisura, Platycara          Balitora brucei Gray… Balito… Gray … Balit… Synon…
+## 5 annamitica, Balitora        Balitora annamitica … Balito… Kotte… Balit… Valid…
+## 6 annandalei, Bhavania        Bhavania annandalei … Bhavan… Hora … Balit… Valid…</code></pre>
 </div>
 <div id="searching-for-species-in-a-genus" class="section level5">
 <h5>Searching for species in a genus:</h5>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>r3 <span class="ot">&lt;-</span> <span class="fu">search_cas</span>(<span class="at">query =</span> <span class="st">&quot;Brachyplatystoma&quot;</span>,<span class="at">type =</span> <span class="st">&quot;species_genus&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r3)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 6
+<pre><code>## # A tibble: 6 × 6
 ##   query                        species_author       species author family status
 ##   &lt;chr&gt;                        &lt;chr&gt;                &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; 
-## 1 affine, Platystoma           Brachyplatystoma fi~ Brachy~ (Lich~ Pimel~ Synon~
-## 2 capapretum, Brachyplatystoma Brachyplatystoma ca~ Brachy~ Lundb~ Pimel~ Valid~
-## 3 cunaguaro, Ginesia           Brachyplatystoma ju~ Brachy~ (Boul~ Pimel~ Synon~
-## 4 dawall, Hypophthalmus        Brachyplatystoma va~ Brachy~ (Vale~ Pimel~ Synon~
-## 5 filamentosus, Pimelodus      Brachyplatystoma fi~ Brachy~ (Lich~ Pimel~ Valid~
-## 6 gigas, Platystoma            Brachyplatystoma fi~ Brachy~ (Lich~ Pimel~ Synon~</code></pre>
+## 1 affine, Platystoma           Brachyplatystoma fi… Brachy… (Lich… Pimel… Synon…
+## 2 capapretum, Brachyplatystoma Brachyplatystoma ca… Brachy… Lundb… Pimel… Valid…
+## 3 cunaguaro, Ginesia           Brachyplatystoma ju… Brachy… (Boul… Pimel… Synon…
+## 4 dawall, Hypophthalmus        Brachyplatystoma va… Brachy… (Vale… Pimel… Synon…
+## 5 filamentosus, Pimelodus      Brachyplatystoma fi… Brachy… (Lich… Pimel… Valid…
+## 6 gigas, Platystoma            Brachyplatystoma fi… Brachy… (Lich… Pimel… Synon…</code></pre>
 </div>
 <div id="searching-for-species-related-to-a-species-or-subspecies" class="section level5">
 <h5>Searching for species related to a species or subspecies:</h5>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>r4 <span class="ot">&lt;-</span> <span class="fu">search_cas</span>(<span class="at">query =</span> <span class="fu">c</span>(<span class="st">&quot;Anguilla nebulosa&quot;</span>, <span class="st">&quot;Clupisoma sinense&quot;</span>),<span class="at">type =</span> <span class="st">&quot;species&quot;</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r4)</span></code></pre></div>
-<pre><code>## # A tibble: 2 x 6
+<pre><code>## # A tibble: 2 × 6
 ##   query                  species_author             species author family status
 ##   &lt;chr&gt;                  &lt;chr&gt;                      &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; 
-## 1 nebulosa, Anguilla     Anguilla nebulosa McClell~ Anguil~ McCle~ Angui~ Valid~
-## 2 sinensis, Platytropius Clupisoma sinense (Huang ~ Clupis~ (Huan~ Ailii~ Valid~</code></pre>
+## 1 nebulosa, Anguilla     Anguilla nebulosa McClell… Anguil… McCle… Angui… Valid…
+## 2 sinensis, Platytropius Clupisoma sinense (Huang … Clupis… (Huan… Ailii… Valid…</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Each matching row by family</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>r4 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">left_join</span>(<span class="fu">species_family</span>()[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>],<span class="at">by =</span> <span class="st">&quot;family&quot;</span>)</span></code></pre></div>
+<pre><code>## ****************************************
+## Eschmeyer&#39;s Catalog of Fishes online database show that the number of available names for use at the species level as of 7 September 2022 is 61,391, the number of valid genera is 5,229, and the number of valid species is 36,305, of which 18,380 are found in freshwater.
+## ****************************************</code></pre>
+<pre><code>## # A tibble: 2 × 9
+##   query                 speci…¹ species author family status class order subfa…²
+##   &lt;chr&gt;                 &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  
+## 1 nebulosa, Anguilla    Anguil… Anguil… McCle… Angui… Valid… Angu… Angu… Anguil…
+## 2 sinensis, Platytropi… Clupis… Clupis… (Huan… Ailii… Valid… Aili… Aili… Ailiid…
+## # … with abbreviated variable names ¹​species_author, ²​subfamily</code></pre>
 </div>
 </div>
 <div id="contribution" class="section level2">
 <h2>Contribution</h2>
-<p>Latin-Chinese Dictionary of Fishes Names Introduction In the last 20-30 years, significant progress has been made in the work of fish. However the contents of a few published Latin-Chinese dictionaries of world’s fish names are still incomplete and cannot satisfy the increasing demand by the Chinese language people for the purpose’s such as research, teaching, conservation, fisheries, or aquatic trade use. Thus, we attempt to collect all currently valid fish species in the world from the literatures and give each genus and species a unique Chinese name. We hope that this dictionary can be used as the basis for the standardization of Chinese fish names for Chinese people in different regions such as China, Taiwan, and Hong Kong.</p>
+<p>Latin-Chinese Dictionary of Fishes Names Introduction In the last 20-30 years, significant progress has been made in the work of fish. However the contents of a few published Latin-Chinese dictionaries of world’s fish names are still incomplete and cannot satisfy the increasing demand by the Chinese language people for the purpose’s such as research, teaching, conservation, fisheries, or aquatic trade use.</p>
 <p>Future versions try to add <a href="http://www.taiwan-fisheries.com.tw/news-preface-2e.htm"><code>Lantin-Chinese Dictionary of Fish Names by Classification System</code></a> to this package.</p>
 <p>Contributions to this package are welcome. The preferred method of contribution is through a GitHub pull request. Feel also free to contact us by creating <a href="https://github.com/Otoliths/rFishTaxa/issues"><strong>an issue</strong></a>.</p>
 </div>
