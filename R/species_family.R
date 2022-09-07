@@ -1,4 +1,4 @@
-#' @title Obtaining Species of Fishes by Family/Subfamily periodically
+#' @title Obtaining species of fishes by family/subfamily periodically
 #' @description This function get genera/species of fishes by family/subfamily in real time.
 #' @rdname species_family
 #' @name species_family
