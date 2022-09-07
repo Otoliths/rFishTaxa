@@ -34,7 +34,7 @@
 #' @importFrom utils browseURL
 #' @importFrom stats na.omit
 #' @details See for website \url{http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp} details.
-#' @references Fricke, R., Eschmeyer, W. N. & R. van der Laan (eds) 2022. ESCHMEYER'S CATALOG OF FISHES: GENERA, SPECIES, REFERENCES.. Electronic version accessed dd mmm 2022. \url{http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp}
+#' @references Fricke, R., Eschmeyer, W. N. & R. van der Laan (eds) 2022. ESCHMEYER'S CATALOG OF FISHES: GENERA, SPECIES, REFERENCES. Electronic version accessed dd mmm 2022. \url{http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp}
 #' @examples
 #' \dontrun{
 #' # For genera in a family:
