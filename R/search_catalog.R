@@ -2,8 +2,8 @@
 #' @description This function get fields for fetching valid species information from the 'Eschmeyer's Catalog of Fishes'.
 #' @rdname search_cas
 #' @name search_cas
-#' @param query *string* One and more queries, support family, genus, and species.
-#' @param type *string* There is one required parameter, type = c("genus_family","species_family","species_genus","species").For example, `genus_family` for genera in a family,`species_family` for species in a family, `species_genus` for species in a genus, and `species` for species related to a species.
+#' @param query \code{string} One and more queries, support family, genus, and species.
+#' @param type \code{string} There is one required parameter, type = c("genus_family","species_family","species_genus","species").For example, `genus_family` for genera in a family,`species_family` for species in a family, `species_genus` for species in a genus, and `species` for species related to a species.
 #' @format The following data frame of the fields to be returned are recognized:
 #' \itemize{
 #' \item query : family, genus, and species Matched.
