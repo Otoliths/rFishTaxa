@@ -23,15 +23,20 @@ devtools::install_github("Otoliths/rFishTaxa",build_vignettes = TRUE)
 
 ##### Load the **rFishTaxa** package
 
-```{r}
+```{r global}
 options(warn = -1)
-library("rFishTaxa")
+library(rFishTaxa)
+library(magrittr)
+library(dplyr)
 ```
+
 
 ##### Genera/Species of Fishes by Family/Subfamily through 2022:
 
 ```{r }
-species_family()
+db <- species_family()
+
+head(db)
 ```
 ```
 ****************************************
@@ -69,6 +74,25 @@ head(r1)
 4 ccrossocheilus, Kottelat Acrossocheilus Oshima 1919 Acrossocheilus Oshima 1919   Cyprinidae Validation
 5 yprininae, tribe         Puntioplites Smith 1929    Puntioplites   Smith 1929    Cyprinidae Synonym   
 6 genneiogarra, Kottelat   Ageneiogarra Garman 1912   Ageneiogarra   Garman 1912   Cyprinidae Validation
+```
+```{r }
+# Each matching row by family
+db$family <- ifelse(!is.na(db$subfamily),paste0(db$family,"_",db$subfamily),db$family)
+r1 <- r1 %>% left_join(db[,1:4],by = "family")
+r1$family <- gsub("_.*","",r1$family)
+head(r1)
+```
+```
+# A tibble: 6 × 9
+  query                    genus_author               genus          author      family status class order subfa…¹
+  <chr>                    <chr>                      <chr>          <chr>       <chr>  <chr>  <chr> <chr> <chr>  
+1 asptosyax, B             Aaptosyax Rainboth 1991    Aaptosyax      Rainboth 1… Cypri… Valid… Acti… Cypr… Cyprin…
+2 yprininae, tribe         Labeo Cuvier 1816          Labeo          Cuvier 1816 Cypri… Synon… Acti… Cypr… Labeon…
+3 tautonymy, fifteen       Labeo Cuvier 1816          Labeo          Cuvier 1816 Cypri… Synon… Acti… Cypr… Labeon…
+4 ccrossocheilus, Kottelat Acrossocheilus Oshima 1919 Acrossocheilus Oshima 1919 Cypri… Valid… Acti… Cypr… Across…
+5 yprininae, tribe         Puntioplites Smith 1929    Puntioplites   Smith 1929  Cypri… Synon… Acti… Cypr… Cyprin…
+6 genneiogarra, Kottelat   Ageneiogarra Garman 1912   Ageneiogarra   Garman 1912 Cypri… Valid… Acti… Cypr… Labeon…
+# … with abbreviated variable name ¹​subfamily
 ```
 
 ##### Searching for species in a family:
@@ -113,7 +137,7 @@ head(r3)
 ```{r }
 r4 <- search_cas(query = c("Anguilla nebulosa", "Clupisoma sinense"),type = "species")
 head(r4)
-r4 %>% dplyr::left_join(species_family()[,1:4],by = "family")
+r4 %>% left_join(species_family()[,1:4],by = "family")
 ```
 ```
 # A tibble: 2 x 9
