@@ -35,7 +35,7 @@
 #' db <- species_family()
 #'
 #' # Each matching row by family
-#'  
+#'
 #' library(magrittr)
 #' r <- search_cas(query = c("Anguilla nebulosa", "Clupisoma sinense"),type = "species")
 #' r %>% dplyr::left_join(db[,1:4],by = "family")
@@ -61,9 +61,11 @@ species_family <- function(){
       rvest::html_table() %>%
       janitor::clean_names() %>%
       dplyr::filter(class != "Totals")
-    return(tibble::as_tibble(result))
+    r <- readRDS(paste0(system.file("extdata",package = "rFishTaxa"),"/","db_2022_09.rds"))
+    return(tibble::as_tibble(r))
   }else{
     cat("Error request - the parameter query is not valid")
     browseURL(url)
   }
 }
+

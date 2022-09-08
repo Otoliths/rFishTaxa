@@ -129,12 +129,14 @@ get_cas <- function(query,type){
     )
     result$species = stringr::str_sub(result$species_author, 1, end - 1)
     result$author = stringr::str_sub(result$species_author, end + 1)
-    result$family = gsub(":.*","",result$family)
+    #result$family = gsub(":.*","",result$family)
+    result$family = gsub(": ","_",result$family)
     if(type == "genus_family"){
       names(result)[2] = "genus_author"
       names(result)[5] = "genus"
       result$family = gsub("\\.","",result$family)
-      result$family = gsub(":.*","",result$family)
+      #result$family = gsub(":.*","",result$family)
+      result$family = gsub(": ","_",result$family)
     }
     return(tibble::as_tibble(result[,c(1,2,5,6,3,4)]))
   }else{

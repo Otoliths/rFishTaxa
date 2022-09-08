@@ -26,7 +26,7 @@ search_cas(query, type)
 Data frame.
 }
 \description{
-This function get fields for fetching valid species information from the `Eschmeyer's Catalog of Fishes`.
+This function get fields for fetching valid species information from the Eschmeyer's Catalog of Fishes.
 }
 \details{
 See for website \url{http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp} details.
