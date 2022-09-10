@@ -25,7 +25,9 @@ Suggests:
     knitr,
     prettydoc,
     devtools
-VignetteBuilder: knitr
+VignetteBuilder:
+    knitr, 
+    rmarkdown
 License: Artistic-2.0
 URL: https://otoliths.github.io/rFishTaxa/
 BugReports: https://github.com/Otoliths/rFishTaxa/issues
