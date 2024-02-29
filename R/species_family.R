@@ -26,6 +26,8 @@
 #' @importFrom utils browseURL
 #' @importFrom janitor clean_names
 #' @importFrom dplyr filter
+#' @importFrom dplyr mutate
+#' @importFrom tidyr fill
 #' @details See for website \url{https://researcharchive.calacademy.org/research/ichthyology/catalog/SpeciesByFamily.asp} details.
 #' @references \url{https://github.com/curso-r/lives/blob/6e042cf5f0bae0d957ff487a39b6601ac6f514ea/drafts/20210915_webscraping_ichthyology.R}
 #' @examples
@@ -61,8 +63,28 @@ species_family <- function(){
       rvest::html_table() %>%
       janitor::clean_names() %>%
       dplyr::filter(class != "Totals")
-    r <- readRDS(paste0(system.file("extdata",package = "rFishTaxa"),"/","db_2022_09.rds"))
-    return(tibble::as_tibble(r))
+    result %>%
+      dplyr::mutate(order = ifelse(endsWith(order, "formes") | endsWith(order, "*"),
+                                   order,
+                                   NA),
+                    class = ifelse(is.na(available_genera) & is.na(order),
+                                   class,
+                                   NA),
+                    # "Percalates-clade" among families as of 6 February 2024
+                    family = ifelse(endsWith(family, "idae") | endsWith(family, '-clade"'),
+                                    family,
+                                    NA),
+                    subfamily = ifelse(!is.na(available_genera) & is.na(family),
+                                       subfamily,
+                                       NA)
+                    # subfamily = ifelse(endsWith(subfamily, "inae") | endsWith(subfamily, " sedis"),
+                    #                    subfamily,
+                    #                    NA)
+                    ) %>%
+      tidyr::fill("class", "order", "family") %>%
+      dplyr::filter(!is.na(available_genera))
+    # r <- readRDS(paste0(system.file("extdata",package = "rFishTaxa"),"/","db_2022_09.rds"))
+    # return(tibble::as_tibble(r))
   }else{
     cat("Error request - the parameter query is not valid")
     browseURL(url)
