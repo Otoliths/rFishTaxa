@@ -4,7 +4,7 @@ Title: R Interface to 'Eschmeyer's Catalog of Fishes'
 Version: 0.1.0
 Date: 2022-09-08
 Authors@R: c(person(given = "Liuyong",     family = "Ding",   email = "ly_ding@126.com",              role = c("aut", "cre"), comment = c(ORCID="0000-0002-5490-182X")),
-             person(given = "Nakamura",      family = "Gabriel",  email = "gabriel.nakamura.souza@gmail.com", role = "ctb")
+             person(given = "Gabriel",      family = "Nakamura",  email = "gabriel.nakamura.souza@gmail.com", role = "ctb")
              )
 Maintainer: Liuyong Ding <ly_ding@126.com>
 Description: `Eschmeyer's Catalog of Fishes` <https://www.calacademy.org/scientists/projects/catalog-of-fishes> is the authoritative reference for taxonomic fish names, featuring a searchable online database. This package helps users to query valid taxonomic fish information for biodiversity estimates, conservation issues, etc.
